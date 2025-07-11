@@ -1,0 +1,18 @@
+$font-family: "Inter Display";
+$color-green: #00e56d;
+$color-dark: #2c2c2c;
+$color-subtitle: #727272;
+
+@mixin responsive-sizing($prop, $min, $max, $minDisplay, $maxDisplay) {
+  $sizeDiff: $max - $min;
+  $displayDiff: $maxDisplay - $minDisplay;
+
+  #{$prop}: clamp(
+    #{$min}px,
+    calc(
+      #{$min}px +
+        (#{$sizeDiff} * ((100vw - #{$minDisplay}px) / #{$displayDiff}))
+    ),
+    #{$max}px
+  );
+}

@@ -1,0 +1,69 @@
+@use "../variables" as *;
+
+.ship {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid red;
+}
+
+.ship__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 52px 80px;
+  padding-inline: 24px;
+}
+
+.ship__title {
+  color: $color-green;
+  margin-bottom: 19px;
+  position: relative;
+  z-index: 2;
+}
+
+.ship .animate-container {
+  min-height: 458px;
+
+  & .animate__column:nth-child(1) .animate__line {
+    height: 90px;
+  }
+
+  & .animate__column:nth-child(2) .animate__line {
+    height: 154px;
+  }
+
+  & .animate__column:nth-child(3) .animate__line {
+    height: 218px;
+  }
+}
+
+.ship-word {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .ship .animate-container {
+    min-height: 204px;
+
+    & .animate__column:nth-child(1) .animate__line {
+      height: 64px;
+    }
+
+    & .animate__column:nth-child(2) .animate__line {
+      height: 84px;
+    }
+
+    & .animate__column:nth-child(3) .animate__line {
+      height: 104px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .ship__wrapper {
+    padding-block: 0;
+  }
+}

@@ -1,0 +1,154 @@
+@use "../variables" as *;
+
+.animation__wrapper {
+  position: relative;
+  height: 793px;
+  width: 100%;
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+
+.integrate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 904px;
+  padding-block: 24px 213px;
+}
+
+.integrate__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 24px;
+}
+
+.animate-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 64px;
+  max-width: 848px;
+  width: 100%;
+}
+
+.integrate .animate-container {
+  min-height: 509px;
+  margin-bottom: 38px;
+}
+
+.animate__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animate__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 240px;
+  width: 100%;
+  height: 240px;
+  padding-block: 36px 84px;
+  border: 1px solid #2c2c2c;
+  border-radius: 24px;
+  outline: 1px solid red;
+}
+
+.animate__line {
+  width: 2px;
+  background-color: #2c2c2c;
+  opacity: 0.5;
+}
+
+.animate__column:nth-child(1) .animate__line {
+  height: 141px;
+}
+
+.animate__column:nth-child(2) .animate__line {
+  height: 205px;
+}
+
+.animate__column:nth-child(3) .animate__line {
+  height: 269px;
+}
+
+.animate__pic-name {
+  font-weight: 500;
+  @include responsive-sizing(font-size, 12, 28, 400, 1440);
+  line-height: 110%;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+.integrate__title,
+.animate-container {
+  will-change: transform, opacity;
+}
+
+.integrate__title {
+  overflow: hidden;
+}
+
+.title-word {
+  display: inline-block;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .animation__wrapper {
+    height: 403px;
+  }
+
+  .integrate {
+    min-height: 391px;
+    padding-block: 40px;
+  }
+
+  .animate-container {
+    column-gap: 13.5px;
+  }
+
+  .integrate .animate-container {
+    min-height: 204px;
+  }
+
+  .animate__box {
+    max-width: 100px;
+    height: 100px;
+    padding-block: 15px;
+    gap: 10px;
+    border-radius: 10px;
+
+    & img {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .animate__column:nth-child(1) .animate__line {
+    height: 64px;
+  }
+
+  .animate__column:nth-child(2) .animate__line {
+    height: 84px;
+  }
+
+  .animate__column:nth-child(3) .animate__line {
+    height: 104px;
+  }
+}
+
+@media (max-width: 400px) {
+  .integrate {
+    padding-block: 22px 0;
+  }
+
+  .integrate .animate-container {
+    margin-bottom: 20px;
+  }
+}

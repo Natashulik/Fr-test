@@ -1,0 +1,51 @@
+@use "./variables" as *;
+@use "./fonts";
+@use "./components/header";
+@use "./components/intro";
+@use "./components/integrate";
+@use "./components/ship";
+@use "./components/work";
+
+@import "~reset-css/reset.css";
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  background-color: #000;
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-weight: 600;
+  @include responsive-sizing(font-size, 48, 120, 400, 1440);
+  line-height: 120%;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  h2 {
+    line-height: 100%;
+  }
+}

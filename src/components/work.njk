@@ -1,0 +1,77 @@
+{% set cases = [ { title: "NotSoApe", tech: "CMS", industry: ["IT Services &
+Consultinig"], stack: ["Storyblok", "Next.JS", "Vercel"], scope: ["Design",
+"Website development", "Maintenance"], image: "../assets/images/work1.jpg" }, {
+title: "EasyPark", tech: "Ecommerce", industry: ["IT Services & Consultinig"],
+stack: ["Storyblok", "Next.JS", "Vercel"], scope: ["Design", "Website
+development", "Maintenance"], image: "../assets/images/work2.jpg" }, { title:
+"GitNation", tech: "Mobile App", industry: ["IT Services & Consultinig"], stack:
+["Storyblok", "Next.JS", "Vercel"], scope: ["Design", "Website development",
+"Maintenance"], image: "../assets/images/work3.jpg" }, { title: "Caleffi", tech:
+"Web Design", industry: ["IT Services & Consultinig"], stack: ["Storyblok",
+"Next.JS", "Vercel"], scope: ["Design", "Website development", "Maintenance"],
+image: "../assets/images/work4.jpg" }, { title: "EasyPark", tech: "Ecommerce",
+industry: ["IT Services & Consultinig"], stack: ["Storyblok", "Next.JS",
+"Vercel"], scope: ["Design", "Website development", "Maintenance"], image:
+"../assets/images/work5.jpg" } ] %}
+
+<section class="work">
+  <div class="work__wrapper wrapper">
+    <h2 class="work__title">Featured work</h2>
+    <div class="work__case-container">
+      {% for case in cases %}
+      <div
+        class="case {% if loop.index != 2 %}hidden{% endif %}"
+        data-case="{{ loop.index }}"
+      >
+        <div class="case__left">
+          <h3 class="case__title">{{ case.title }}</h3>
+          <div class="case__info-box">
+            <div class="case__info">
+              <span class="case__subtitle">Industry</span>
+              <ul class="case__stack-list">
+                {% for item in case.industry %}
+                <li class="case__stack-item">{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="case__info">
+              <span class="case__subtitle">Technical Stack</span>
+              <ul class="case__stack-list">
+                {% for item in case.stack %}
+                <li class="case__stack-item">{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="case__info">
+              <span class="case__subtitle">Scope of Work</span>
+              <ul class="case__stack-list">
+                {% for item in case.scope %}
+                <li class="case__stack-item">{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case__right">
+          <a class="case__badge" href="!#">
+            <span> View Case</span>
+            <img src="../assets/icons/triangular.svg" alt="arrow" loading="lazy"/>
+          </a>
+          <div class="case__pic">
+            <img
+              src="{{ case.image }}"
+              alt="{{ case.title }}"
+              class="case__image" loading="lazy"
+            />
+            <span class="case__tech-name">{{ case.tech }}</span>
+          </div>
+        </div>
+        <div class="case__top-mobile">
+          <h3 class="case__title mobile">{{ case.title }}</h3>
+          <span class="case__tech-name mobile">{{ case.tech }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
