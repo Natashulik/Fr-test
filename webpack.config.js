@@ -43,10 +43,26 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|webp)$/i,
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name][ext]",
+        },
+        use: [
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: { quality: 80 },
+              webp: { quality: 80, lossless: false },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/icons/[name][ext]",
         },
       },
       {
@@ -62,7 +78,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "pages", "index.njk"),
       filename: "index.html",
-      inject: true, // обычно по умолчанию true
+      inject: true,
     }),
     new FileManagerPlugin({
       events: {
@@ -74,18 +90,18 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/main.css",
     }),
-    new CopyPlugin({
+    /*new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "src/assets/images"),
           to: path.resolve(__dirname, "dist/assets/images"),
         },
-        {
+         {
           from: path.resolve(__dirname, "src/assets/icons"),
           to: path.resolve(__dirname, "dist/assets/icons"),
         },
       ],
-    }),
+    }),*/
   ],
   devServer: {
     static: {
@@ -96,6 +112,7 @@ module.exports = {
     open: true,
   },
   optimization: {
+    minimize: true,
     minimizer: [
       new ImageMinimizerPlugin({
         minimizer: {

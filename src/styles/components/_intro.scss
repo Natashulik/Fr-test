@@ -12,8 +12,7 @@
   width: 100%;
   @include responsive-sizing(height, 640, 800, 768, 1440);
   height: 100vh;
-  background: url("../assets/images/bg.png") no-repeat center / cover;
-  z-index: -1;
+  background: url("../assets/images/bg.webp") no-repeat center / cover;
 }
 
 .intro__wrapper {
@@ -35,6 +34,8 @@
   line-height: 94%;
   letter-spacing: -0.03em;
   color: #fff;
+  position: relative;
+  z-index: 1;
 
   & span:last-child {
     display: inline-block;
@@ -53,6 +54,8 @@
   max-width: 90px;
   width: 100%;
   @include responsive-sizing(margin-right, 100, 590, 768, 1440);
+  position: relative;
+  z-index: 1;
 }
 
 .intro__logo {
@@ -85,6 +88,8 @@
   width: 325px;
   font-weight: 500;
   margin-right: 15.2vw;
+  position: relative;
+  z-index: 1;
 }
 
 .intro__text.mobile {
@@ -95,6 +100,8 @@
   display: flex;
   gap: 8px;
   margin-top: 5px;
+  position: relative;
+  z-index: 1;
 }
 
 .intro__circle {

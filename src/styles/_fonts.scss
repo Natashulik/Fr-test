@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Inter Display";
   src: url("../assets/fonts/InterDisplay-Regular.woff2") format("woff2"),
-    url("../assets/fonts/InterDisplay-Regular.woff") format("woff"),
-    url("../assets/fonts/InterDisplay-Regular.ttf") format("truetype");
+    url("../assets/fonts/InterDisplay-Regular.woff") format("woff");
+
   font-style: normal;
   font-weight: 400;
 }
@@ -10,8 +10,8 @@
 @font-face {
   font-family: "Inter Display";
   src: url("../assets/fonts/InterDisplay-Medium.woff2") format("woff2"),
-    url("../assets/fonts/InterDisplay-Medium.woff") format("woff"),
-    url("../assets/fonts/InterDisplay-Medium.ttf") format("truetype");
+    url("../assets/fonts/InterDisplay-Medium.woff") format("woff");
+  font-display: swap;
   font-style: normal;
   font-weight: 500;
 }
@@ -19,8 +19,8 @@
 @font-face {
   font-family: "Inter Display";
   src: url("../assets/fonts/InterDisplay-SemiBold.woff2") format("woff2"),
-    url("../assets/fonts/InterDisplay-SemiBold.woff") format("woff"),
-    url("../assets/fonts/InterDisplay-SemiBold.ttf") format("truetype");
+    url("../assets/fonts/InterDisplay-SemiBold.woff") format("woff");
+  font-display: swap;
   font-style: normal;
   font-weight: 600;
 }
@@ -28,8 +28,8 @@
 @font-face {
   font-family: "Inter Display";
   src: url("../assets/fonts/InterDisplay-Bold.woff2") format("woff2"),
-    url("../assets/fonts/InterDisplay-Bold.woff") format("woff"),
-    url("../assets/fonts/InterDisplay-Bold.ttf") format("truetype");
+    url("../assets/fonts/InterDisplay-Bold.woff") format("woff");
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
 }

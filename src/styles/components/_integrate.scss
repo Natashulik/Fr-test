@@ -2,20 +2,16 @@
 
 .animation__wrapper {
   position: relative;
-  height: 793px;
+  height: 1689px;
   width: 100%;
-  margin-bottom: 100px;
   overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .integrate {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 904px;
-  padding-block: 24px 213px;
+  height: 904px;
+  padding-block: 27px 213px;
 }
 
 .integrate__wrapper {
@@ -42,6 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform-style: preserve-3d;
 }
 
 .animate__box {
@@ -55,7 +52,6 @@
   padding-block: 36px 84px;
   border: 1px solid #2c2c2c;
   border-radius: 24px;
-  outline: 1px solid red;
 }
 
 .animate__line {
@@ -100,7 +96,7 @@
 
 @media (max-width: 768px) {
   .animation__wrapper {
-    height: 403px;
+    height: 806px;
   }
 
   .integrate {
