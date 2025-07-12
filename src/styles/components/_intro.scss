@@ -121,16 +121,14 @@
 }
 
 @media (max-width: 768px) {
-  .intro {
-    height: calc(-88px + 100vh);
-  }
   .intro__wrapper {
+    height: calc(-88px + 100vh);
     padding-inline: 24px;
-    padding-top: 125px;
+    padding-block: 210px 24px;
   }
 
   .intro__title {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     font-weight: 600;
     letter-spacing: -0.02em;
   }
