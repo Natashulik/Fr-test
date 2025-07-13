@@ -9642,9 +9642,9 @@ function setupMobileAnimations() {
   }, {
     y: -150,
     ease: "power2.out",
-    duration: 4,
+    duration: 5,
     stagger: 0.2
-  }, "-=5");
+  }, "-=4");
   console.log("Mobile duration:", tl.totalDuration());
 }
 function initAnimations() {
