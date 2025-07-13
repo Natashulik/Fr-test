@@ -9,7 +9,7 @@ function setupDesktopAnimations() {
     scrollTrigger: {
       trigger: ".animation__wrapper",
       start: "top 0%",
-      scrub: 1.5,
+      scrub: 1,
       end: "+=1700",
       anticipatePin: 1,
       pin: true,
@@ -27,17 +27,17 @@ function setupDesktopAnimations() {
       y: -200,
       opacity: 1,
       scale: 1,
-      duration: 1.2,
+      duration: 3.6,
     }
   )
     .to(
       ".title-word",
       {
         y: 150,
-        duration: 1.8,
-        stagger: 1,
+        duration: 5.4,
+        stagger: 3,
       },
-      "+=1.2"
+      "+=3.6"
     )
     .fromTo(
       ".animate-container.integrate__pic-container .animate__column",
@@ -47,10 +47,10 @@ function setupDesktopAnimations() {
       {
         y: 100,
         opacity: 1,
-        duration: 5.5,
+        duration: 16.5,
         ease: "none",
       },
-      "-=5"
+      "-=15"
     )
     .fromTo(
       ".animate-container.integrate__pic-container .animate__column",
@@ -58,16 +58,16 @@ function setupDesktopAnimations() {
         rotationY: 0,
         opacity: 1,
         ease: "power2.inOut",
-        stagger: 0.2,
+        stagger: 0.6,
       },
       {
         rotationY: 90,
         opacity: 0,
-        duration: 1.2,
+        duration: 3.6,
         ease: "power2.inOut",
-        stagger: 0.2,
+        stagger: 0.6,
       },
-      "-=0.5"
+      "-=1.5"
     )
     .fromTo(
       ".animate-container.ship__pic-container .animate__column",
@@ -76,21 +76,24 @@ function setupDesktopAnimations() {
         rotationY: 0,
         opacity: 1,
         y: -950,
-        duration: 1.2,
-        stagger: 0.2,
+        duration: 3.6,
+        stagger: 0.6,
         ease: "power2.out",
       },
-      "-=0.6"
+      "-=1.8"
     )
-    .to(
+    .fromTo(
       ".animate-container.ship__pic-container .animate__column",
       {
-        y: -800,
-        duration: 2,
-        stagger: 0.2,
+        y: -950,
         ease: "power2.out",
       },
-      "-=1"
+      {
+        y: -800,
+        duration: 6,
+        stagger: 0.6,
+        ease: "power2.out",
+      }
     )
     .fromTo(
       ".ship-word",
@@ -98,18 +101,20 @@ function setupDesktopAnimations() {
       {
         y: -800,
         ease: "power2.out",
-        duration: 1.5,
-        stagger: 0.4,
+        duration: 4.7,
+        stagger: 1.2,
       },
-      "-=2.5"
+      "-=10"
     );
+
+  //  console.log("Total duration:", tl.totalDuration());
 }
 
 function setupMobileAnimations() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".animation__wrapper",
-      start: "top 0%",
+      start: "top 20%",
       scrub: 0.5,
       end: "+=800",
       pin: true,
@@ -120,27 +125,38 @@ function setupMobileAnimations() {
   tl.fromTo(
     ".integrate__title",
     {
-      y: 300,
+      y: 100,
+      scale: 1.3,
       opacity: 0,
-      scale: 1.5,
       ease: "power2.out",
     },
     {
-      y: 200,
+      y: 100,
+      scale: 1.3,
       opacity: 1,
-      scale: 1,
-      duration: 1.2,
+      duration: 0.1,
     }
   )
-    .to(
+    .fromTo(
       ".integrate__title",
       {
-        y: 300,
-        opacity: 0,
-        duration: 2,
-        stagger: 1,
+        y: 100,
+        scale: 1.3,
+        ease: "power2.out",
       },
-      "+=1"
+      {
+        y: -100,
+        scale: 1,
+        duration: 2,
+      }
+    )
+    .to(
+      ".title-word",
+      {
+        y: 200,
+        duration: 2,
+      },
+      "+=1.5"
     )
     .fromTo(
       ".animate-container.integrate__pic-container .animate__column",
@@ -148,12 +164,12 @@ function setupMobileAnimations() {
         y: -400,
       },
       {
-        y: 300,
+        y: 100,
         opacity: 1,
-        duration: 4,
+        duration: 5,
         ease: "none",
       },
-      "-=4.5"
+      "-=5.2"
     )
     .fromTo(
       ".animate-container.integrate__pic-container .animate__column",
@@ -161,12 +177,11 @@ function setupMobileAnimations() {
         rotationY: 0,
         opacity: 1,
         ease: "power2.inOut",
-        stagger: 0.2,
       },
       {
         rotationY: 90,
         opacity: 0,
-        duration: 0.5,
+        duration: 0.6,
         ease: "power2.inOut",
         stagger: 0.2,
       },
@@ -174,33 +189,34 @@ function setupMobileAnimations() {
     )
     .fromTo(
       ".animate-container.ship__pic-container .animate__column",
-      { rotationY: 90, opacity: 0, y: -710 },
+      { rotationY: 90, opacity: 0, y: -400 },
       {
         rotationY: 0,
         opacity: 1,
-        y: -710,
-        duration: 0.5,
+        y: -400,
+        duration: 0.6,
         stagger: 0.2,
         ease: "power2.out",
-      },
-      "-=0.6"
+      }
     )
     .to(".animate-container.ship__pic-container .animate__column", {
-      y: -600,
-      duration: 2,
+      y: -200,
+      duration: 4,
       ease: "power2.out",
     })
     .fromTo(
       ".ship__title",
-      { y: -1100 },
+      { y: -600 },
       {
-        y: -600,
+        y: -150,
         ease: "power2.out",
         duration: 4,
         stagger: 0.2,
       },
-      "-=2"
+      "-=5"
     );
+
+  console.log("Mobile duration:", tl.totalDuration());
 }
 
 function initAnimations() {
