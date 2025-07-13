@@ -139,6 +139,12 @@
   }
 }
 
+@media (max-width: 530px) {
+  .integrate__title {
+    min-height: 105px;
+  }
+}
+
 @media (max-width: 400px) {
   .integrate {
     padding-block: 22px 0;
