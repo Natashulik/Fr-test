@@ -104,7 +104,7 @@ function setupDesktopAnimations() {
         duration: 4.7,
         stagger: 1.2,
       },
-      "-=10"
+      "-=8"
     );
 
   //  console.log("Total duration:", tl.totalDuration());
@@ -208,12 +208,12 @@ function setupMobileAnimations() {
       ".ship__title",
       { y: -600 },
       {
-        y: -150,
+        y: -200,
         ease: "power2.out",
         duration: 5,
         stagger: 0.2,
       },
-      "-=4"
+      "-=3"
     );
 
   console.log("Mobile duration:", tl.totalDuration());

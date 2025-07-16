@@ -1,7 +1,7 @@
 @use "../variables" as *;
 
 .work {
-  margin-top: -600px;
+  margin-top: -700px;
 }
 
 .work__wrapper {
@@ -192,7 +192,7 @@
 
 @media (max-width: 768px) {
   .work {
-    margin-top: 0;
+    margin-top: -200px;
   }
 
   .work__wrapper {
